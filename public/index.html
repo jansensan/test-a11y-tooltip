@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Testing tooltip + screen reader combination</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Testing tooltip + screen reader combination</h1>
+
+      <section>
+        <h2>MDN's tooltip</h2>
+        <div class="form-row">
+          <label for="password1">Password:</label>
+          <input
+            type="password"
+            id="password1"
+            aria-describedby="passwordRules1"
+          />
+          <div role="tooltip" id="passwordRules1">
+            <p>Password Rules:</p>
+            <p>Another paragraph before the list.</p>
+            <ul>
+              <li>Minimum of 8 characters</li>
+              <li>Include at least one lowercase letter, one uppercase letter, one number and one special character</li>
+              <li>Unique to this website</li>
+            </ul>
+            <p>This paragraph is after the list.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>MDN's tooltip adapted</h2>
+        <div class="form-row">
+          <label for="password2">Password:</label>
+          <input
+            type="password"
+            id="password2"
+            aria-describedby="passwordRules2"
+          />
+          <div role="tooltip" id="passwordRules2">
+            <p>Password Rules: Minimum of 8 characters, Include at least one lowercase letter, one uppercase letter, one number and one special character, Unique to this website</p>
+          </div>
+        </div>
+      </section>
+
+      <p>Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tooltip_Role">ARIA: tooltip role | MDN</a></p>
+    </div>
+  </body>
+</html>
