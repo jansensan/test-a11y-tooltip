@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Testing tooltip + screen reader combination (v02)</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Testing tooltip + screen reader combination (v02)</h1>
+
+      <section>
+        <div class="form-row">
+          <label for="password1">Password:</label>
+          <input
+            type="password"
+            id="password1"
+            aria-describedby="passwordRules1"
+          />
+
+          <button
+            id="tooltipToggle"
+            class="tooltip-toggle"
+            type="button"
+            aria-label="Tips for creating passwords - Opens a tooltip and sets focus to it"
+          >🛈 Tips for creating passwords</button>
+
+          <div
+            id="tooltip"
+            role="tooltip"
+            tabindex="-1"
+          >
+            <div class="tooltip-content" id="passwordRules1">
+              <p>Password Rules:</p>
+              <p>Ensure to respect the following rules when creating a password:</p>
+              <ul>
+                <li>Minimum of 8 characters</li>
+                <li>Include at least one lowercase letter, one uppercase letter, one number and one special character</li>
+                <li>Unique to this website</li>
+              </ul>
+              <p>This paragraph is after the list.</p>
+            </div>
+            <button
+              id="tooltipCloseButton"
+              type="button"
+              class="tooltip-close-button"
+            >
+              <span class="icon">❌</span>
+              <span class="label sr-only">Close - Dismisses the tooltip and sets the focus back to the button that opened it</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
